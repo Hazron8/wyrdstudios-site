@@ -1,11 +1,156 @@
-/* Wyrd Studios — global styles (placeholder, Phase 2 will define full design system) */
+/* ============================================================
+   Wyrd Studios Design System
+   Color palette: dark/moody with arcane gold accent
+   Personality: mysterious, handcrafted, technically sharp
+   ============================================================ */
+
+/* --- Color Tokens --- */
+:root {
+  /* Backgrounds */
+  --color-bg:           #0d0d12;   /* near-black, deep void */
+  --color-bg-elevated:  #14141e;   /* card / section surfaces */
+  --color-bg-subtle:    #1c1c2a;   /* subtle contrast */
+
+  /* Foreground */
+  --color-text:         #e8e4dc;   /* warm off-white — not harsh */
+  --color-text-muted:   #8a8597;   /* secondary text */
+  --color-text-dim:     #4d495c;   /* placeholder, disabled */
+
+  /* Accent — arcane gold */
+  --color-accent:       #c8a96e;   /* primary gold */
+  --color-accent-light: #e4c98a;   /* hover / highlights */
+  --color-accent-dark:  #9e7e48;   /* pressed states */
+
+  /* Borders */
+  --color-border:       #2a2838;
+  --color-border-accent:#3d3452;
+
+  /* Status */
+  --color-success:      #4caf7d;
+  --color-error:        #e05555;
+}
+
+/* --- Typography --- */
+:root {
+  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif; /* headings */
+
+  /* Scale (Major Third — 1.25) */
+  --text-xs:   0.64rem;
+  --text-sm:   0.8rem;
+  --text-base: 1rem;
+  --text-lg:   1.25rem;
+  --text-xl:   1.563rem;
+  --text-2xl:  1.953rem;
+  --text-3xl:  2.441rem;
+  --text-4xl:  3.052rem;
+  --text-5xl:  3.815rem;
+
+  /* Line heights */
+  --leading-tight:  1.2;
+  --leading-snug:   1.4;
+  --leading-normal: 1.6;
+  --leading-relaxed:1.8;
+}
+
+/* --- Spacing (8pt grid) --- */
+:root {
+  --space-1:   0.25rem;   /* 4px */
+  --space-2:   0.5rem;    /* 8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+
+  /* Layout */
+  --max-width: 1100px;
+  --content-width: 720px;
+  --gutter: var(--space-6);
+
+  /* Radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full:9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.6);
+  --shadow-glow:0 0 32px rgba(200,169,110,0.15);
+}
+
+/* --- Reset & Base --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography defaults --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-light);
+}
+
+p {
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background: var(--color-bg-subtle);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+/* --- Utility: container --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--content {
+  max-width: var(--content-width);
 }
