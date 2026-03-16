@@ -1,0 +1,189 @@
+/* --- Hero --- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-32) var(--space-24);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.heroGlow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(200, 169, 110, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.heroEyebrow {
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.heroHeadline {
+  font-size: clamp(var(--text-3xl), 7vw, var(--text-5xl));
+  font-family: var(--font-serif);
+  line-height: var(--leading-tight);
+  max-width: 12ch;
+  margin-bottom: var(--space-6);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.heroSubline {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  max-width: 48ch;
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-relaxed);
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* --- Section --- */
+.section {
+  padding-block: var(--space-24);
+}
+
+.sectionTitle {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-2);
+}
+
+.sectionSubtitle {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-12);
+}
+
+/* --- App grid --- */
+.appGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.appCard {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.appCard:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.appEmoji {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.appContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.appStatus {
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.appName {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: var(--color-text);
+}
+
+.appTagline {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.appDesc {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* --- Consulting --- */
+.consultSection {
+  background: var(--color-bg-elevated);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-24);
+}
+
+.consultInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+
+.consultContent {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.consultEyebrow {
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.consultTitle {
+  font-size: var(--text-3xl);
+}
+
+.consultBody {
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.consultSymbol {
+  font-size: 8rem;
+  color: var(--color-accent);
+  opacity: 0.12;
+  font-family: var(--font-serif);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .consultSymbol {
+    display: none;
+  }
+}
