@@ -27,7 +27,7 @@ export default function ContactPage() {
             <div className={styles.formCard}>
               <h2 className={styles.formTitle}>Send a message</h2>
               <form
-                action="https://formspree.io/f/REPLACE_WITH_FORM_ID"
+                action="https://formspree.io/f/mvzwvnyd"
                 method="POST"
                 className={styles.form}
               >
